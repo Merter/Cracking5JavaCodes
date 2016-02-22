@@ -40,7 +40,7 @@ public class SpaceReplacing {
     for (int i=0; i<str.length(); i++) {
       char chr = str.charAt(i);
       if (chr == ' ') {
-        sb.append("%20");
+        sb.append(REPLACER);
       } else {
         sb.append(chr);
       }
