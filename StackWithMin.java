@@ -18,7 +18,7 @@ public class StackWithMin<T extends Comparable<T>> {
 
   public T peek() {
     if (isEmpty()) return null;
-    return stack.peek().item;
+    return stack.peekLast().item;
   }
 
   public void push(T item) {
@@ -27,10 +27,10 @@ public class StackWithMin<T extends Comparable<T>> {
     if (isEmpty()) {
       newTop.minWhenMeAtTop = newTop;
     } else {
-      if (item.compareTo(stack.peek().minWhenMeAtTop.item) < 0) {
+      if (item.compareTo(stack.peekLast().minWhenMeAtTop.item) < 0) {
         newTop.minWhenMeAtTop = newTop;
       } else {
-        newTop.minWhenMeAtTop = stack.peek().minWhenMeAtTop;
+        newTop.minWhenMeAtTop = stack.peekLast().minWhenMeAtTop;
       }
     }
     stack.push(newTop);
@@ -43,7 +43,7 @@ public class StackWithMin<T extends Comparable<T>> {
 
   public T min() {
     if (stack.isEmpty()) return null;
-    return stack.peek().minWhenMeAtTop.item;		
+    return stack.peekLast().minWhenMeAtTop.item;		
   }
 
 }
