@@ -1,6 +1,7 @@
 
 import java.util.*;
 
+// CtCI 5.2
 public class DecimalInBinary {
 
   private static final String ERROR_MESSAGE = "ERROR";
